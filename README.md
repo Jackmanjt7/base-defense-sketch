@@ -1,18 +1,69 @@
+# BaseDefenseSketch app
 
-User: Most likely a logistician preparing a local base defense sketch
-Input: Assets available
-Output: Ideal base defense sketch with gun positions, and recommended distances based off doctrine from various points.
-Success Condition: A user can create two assets, position them, see their distance, save, and reload. 
+## Run the app
 
+### uv
 
-Nouns in this project:
-Scenario: name, units, grid scale, perimeter.
-	EX: FSC, (5xM2, 2x HIPPO, 4x M978s) ,1:100m, (calculated)
-Asset: ID, display name, category, quantity, position
-	EX: M2-0001, M2 Machine Gun, Weaponsystem, x1, (position)
-Position: x-coord, y-coord
-	EX: 1,2
-SeparationRule: source category, target category, minimum distance
-	EX: CL I Water, CL III Fuel, 500 meters
-DistanceResult: two asset IDs, measured distance, rule status
-	EX: (HIPPO-0001, FUELER-0001), 501 m, true
+Run as a desktop app:
+
+```bash
+uv run flet run
+```
+
+Run as a web app:
+
+```bash
+uv run flet run --web
+```
+
+For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/).
+
+## Build the app
+
+### Android
+
+```bash
+flet build apk -v
+```
+
+For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
+
+### iOS
+
+```bash
+flet build ipa -v
+```
+
+For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
+
+### macOS
+
+```bash
+flet build macos -v
+```
+
+For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
+
+### Linux
+
+```bash
+flet build linux -v
+```
+
+For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
+
+### Windows
+
+```bash
+flet build windows -v
+```
+
+For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+
+### Web
+
+```bash
+flet build web -v
+```
+
+For more details on building Web app, refer to the [Web Packaging Guide](https://flet.dev/docs/publish/web/).

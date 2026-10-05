@@ -1,29 +1,9 @@
 import flet as ft
 import prototype as pt
+import pageHandler as ph
 
 
 def main(page: ft.Page):
-    
-    def handle_pan_update1(e: ft.DragUpdateEvent[ft.GestureDetector]):
-        container = e.control.parent
-        container.top = max(0.0, container.top + e.local_delta.y)
-        container.left = max(0.0, container.left + e.local_delta.x)
-        container.update()
-
-    def make_redbox(x,y):
-        return ft.Container(
-            width=50,
-            height=50,
-            left=x,
-            top=y,
-            bgcolor=ft.Colors.RED,
-            border_radius = 5,
-            content=ft.GestureDetector(
-                mouse_cursor = ft.MouseCursor.MOVE,
-                drag_interval=10,
-                on_pan_update=handle_pan_update1,
-            ),
-        )
     
     stackContent = ft.Stack(
         expand = True,
@@ -41,11 +21,11 @@ def main(page: ft.Page):
         ),
     )
 
-    stackContent.controls.append(make_redbox(0,0))
+    stackContent.controls.append(ph.make_redbox(0,0))
     stackContent.update()
 
     def increment_click(e: ft.Event[ft.FloatingActionButton]):
-        stackContent.controls.append(make_redbox(60,60))
+        stackContent.controls.append(ph.make_redbox(60,60))
         stackContent.update()
 
     page.floating_action_button = ft.FloatingActionButton(
